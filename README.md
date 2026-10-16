@@ -2,9 +2,7 @@
 # Tricell-Encryption-Algorithm-2.0
 
 A new and improve encryption Algorithm
-
-
-
+(Exercise for IT course on Högskolan på Åland)
 
 ## Encrypt.py
     -Simple python program that runs Tricell-Encryption-Algorithm-2.0
