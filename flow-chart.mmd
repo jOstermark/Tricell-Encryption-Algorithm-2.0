@@ -1,0 +1,16 @@
+graph TD
+    A([Start]) --> B[/Indata: Klartext M, Nyckel K/]
+    B --> C[Initiera tom krypterad sträng E och index i = 0]
+    C --> D{Finns det fler tecken i M? <br> i < längd M}
+
+    D -- Ja --> E["Hämta tecken M[i] och nyckel k = K[i mod len(K)]"]
+    E --> F["Beräkna krypterat tecken: <br> C = (((ASCII(M[i]) - 32) + k) mod 96) + 32"]
+    F --> G[Lägg till tecknet C i krypterad sträng E]
+    G --> H[i = i + 1]
+    H --> D
+
+    D -- Nej --> I[Generera slumpmässiga saltblock och välj skärpunkt]
+    I --> J["Bygg Header: <br> 1. Start-saltets längd <br> 2. Mitten-saltets startindex <br> 3. Mitten-saltets slutindex <br> 4. Slut-saltets längd"]
+    J --> K["Kombinera blocken: <br> Start-salt + Krypterat block 1 + Mitten-salt + Krypterat block 2 + Slut-salt"]
+    K --> L[/Utdata: Slutgiltig saltad chiffertext/]
+    L --> M([Slut])
