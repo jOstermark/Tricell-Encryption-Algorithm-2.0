@@ -67,10 +67,7 @@ def generate_random_string(lenght:int) -> str:
     return random_string
 
 def main():
-    test = salt(",)v;{yD6Y9x!")
-    print(f"{test}")
-    test = un_salt(test)
-    print(f"{test}")
+    
 
 
 
